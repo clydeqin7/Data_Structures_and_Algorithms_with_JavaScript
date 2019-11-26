@@ -150,7 +150,7 @@ names.append("Bryan");
 names.append("Danny");
 // names.front();
 // console.log(names.getElement());
-// console.log(names.toString())
+console.log(names.toString())
 
 // 迭代器访问列表
 // 正序遍历
@@ -161,12 +161,12 @@ names.append("Danny");
 var i = 0;
 // console.log('listSize: ', names.listSize);
 // console.log("pos: ", names.pos);
-names.moveTo(-1);
-console.log('listSize: ', names.listSize);
-console.log("pos: ", names.pos);
-console.log(names.hasPrev())
-names.prev()
-console.log("now pos: ", names.pos)
+// names.moveTo(-1);
+// console.log('listSize: ', names.listSize);
+// console.log("pos: ", names.pos);
+// console.log(names.hasPrev())
+// names.prev()
+// console.log("now pos: ", names.pos)
 // 倒序遍历
 // for (names.end(); names.hasPrev(); names.prev()) {
 //     console.log(++i)
