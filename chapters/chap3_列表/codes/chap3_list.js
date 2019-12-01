@@ -20,6 +20,9 @@ function List() {
     this.moveTo = moveTo;
     this.getElement = getElement;
     this.contains = contains;
+    this.appendMax = appendMax;
+    this.appendMin = appendMin;
+    this.showSameGender = showSameGender;
 }
 
 // 给列表添加元素
@@ -171,3 +174,66 @@ var i = 0;
 // for (names.end(); names.hasPrev(); names.prev()) {
 //     console.log(++i)
 // }
+
+
+/* 练习题 */
+// 练习1
+function appendMax(element) {
+    let addFlag = true
+    this.dataStore.forEach(item => {
+        if (item > element) {
+            addFlag = false
+            return 
+        }
+    });
+    if (addFlag) {
+        this.append(element)
+    }
+}
+
+// 练习2
+function appendMin(element) {
+    let addFlag = true
+    this.dataStore.forEach(item => {
+        if (item < element) {
+            addFlag = false
+            return 
+        }
+    });
+    if (addFlag) {
+        this.append(element)
+    }
+}
+
+// names.appendMax('Tira')
+// names.appendMax(100)
+// console.log(names.toString())
+
+// 练习三
+function Person(name, gender) {
+    this.name = name
+    this.gender = gender
+}
+
+function showSameGender(gender){
+    this.dataStore.forEach(item => {
+        if (item.gender === gender) {
+            console.log(item)
+        }
+    })
+}
+
+let personList = new List()
+personList.append(new Person('albert', 'M'))
+personList.append(new Person('allon', 'M'))
+personList.append(new Person('bruce', 'M'))
+personList.append(new Person('clyde', 'M'))
+personList.append(new Person('benjamin', 'M'))
+personList.append(new Person('abbey', 'F'))
+personList.append(new Person('ada', 'F'))
+personList.append(new Person('rose', 'F'))
+personList.append(new Person('ana', 'F'))
+personList.append(new Person('lucy', 'F'))
+
+console.log(personList.toString())
+console.log(personList.showSameGender('F'))
